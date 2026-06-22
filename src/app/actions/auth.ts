@@ -31,7 +31,7 @@ export async function signup(
     return { error: "회원가입에 실패했어요: " + error.message };
   }
 
-  redirect("/mypage");
+  redirect("/home");
 }
 
 export async function login(
@@ -52,7 +52,7 @@ export async function login(
     return { error: "로그인에 실패했어요. 이메일/비밀번호를 확인해주세요." };
   }
 
-  redirect("/mypage");
+  redirect("/home");
 }
 
 export async function logout() {
