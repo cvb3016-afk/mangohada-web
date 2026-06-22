@@ -87,6 +87,14 @@ export default async function HomePage() {
           <span className="text-sm text-brand font-medium">관리하기 ›</span>
         </Link>
       </section>
+
+      <Link
+        href="/articles"
+        className="bg-surface rounded-2xl shadow-sm p-4 flex items-center justify-between lg:col-span-3"
+      >
+        <span className="text-sm font-medium">웰다잉 아티클 보기</span>
+        <span className="text-zinc-400">›</span>
+      </Link>
     </main>
   );
 }

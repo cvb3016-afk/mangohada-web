@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import BottomTabBar from "./BottomTabBar";
 import TopNavBar from "./TopNavBar";
 
-const TAB_ROUTES = ["/home", "/wills", "/market", "/experts", "/profile"];
+const TAB_ROUTES = ["/home", "/wills", "/market", "/experts", "/profile", "/articles"];
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
