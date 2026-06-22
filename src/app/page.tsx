@@ -1,65 +1,38 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const features = [
+  { name: "유언 남기기", href: "/will", desc: "텍스트 또는 동영상으로 유언을 남겨보세요" },
+  { name: "행복저금", href: "/happiness", desc: "오늘 하루의 행복한 순간을 기록하세요" },
+  { name: "전문가 서비스", href: "/experts", desc: "변호사, 재무설계 등 전문가와 상담하세요" },
+  { name: "나의 마지막 초대장", href: "/invitation", desc: "소중한 사람에게 초대장을 보내세요" },
+  { name: "아티클 보기", href: "/articles", desc: "웰다잉 관련 콘텐츠를 만나보세요" },
+  { name: "마켓", href: "/market", desc: "포인트로 테마를 구매하세요" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="flex flex-1 flex-col items-center px-6 py-16">
+      <div className="w-full max-w-4xl flex flex-col gap-12">
+        <div className="text-center flex flex-col gap-3">
+          <h1 className="text-3xl font-bold">망고하다</h1>
+          <p className="text-zinc-500">
+            인생의 마지막을 미리, 그리고 따뜻하게 준비하는 공간
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {features.map((f) => (
+            <Link
+              key={f.href}
+              href={f.href}
+              className="border rounded-xl p-5 flex flex-col gap-1 hover:bg-black/[.03] transition-colors"
+            >
+              <span className="font-semibold">{f.name}</span>
+              <span className="text-sm text-zinc-500">{f.desc}</span>
+            </Link>
+          ))}
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
