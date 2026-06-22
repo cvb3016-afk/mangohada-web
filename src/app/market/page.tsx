@@ -36,7 +36,7 @@ export default function MarketPage() {
   }
 
   return (
-    <main className="flex flex-1 flex-col gap-6 px-5 pt-6">
+    <main className="flex flex-1 flex-col gap-6 px-5 pt-6 lg:max-w-6xl lg:mx-auto lg:w-full lg:px-10 lg:py-10">
       <div className="flex items-center justify-between">
         <h1 className="text-lg font-bold">마켓</h1>
         <span className="text-sm font-medium text-brand">보유 {balance} 🥭</span>
@@ -44,7 +44,7 @@ export default function MarketPage() {
 
       <section className="flex flex-col gap-3">
         <h2 className="text-sm font-semibold">망고하다 님 맞춤 추천 테마</h2>
-        <div className="flex gap-3 overflow-x-auto -mx-5 px-5 pb-1">
+        <div className="flex gap-3 overflow-x-auto -mx-5 px-5 pb-1 lg:mx-0 lg:px-0 lg:gap-5">
           {recommended.map((t) => (
             <ThemeCard key={t.id} theme={t} owned={owned.includes(t.id)} onClick={() => setSelected(t)} wide />
           ))}
@@ -53,7 +53,7 @@ export default function MarketPage() {
 
       <section className="flex flex-col gap-3">
         <h2 className="text-sm font-semibold">전체 테마</h2>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-3 lg:grid-cols-6 lg:gap-5">
           {allThemes.map((t) => (
             <ThemeCard key={t.id} theme={t} owned={owned.includes(t.id)} onClick={() => setSelected(t)} />
           ))}

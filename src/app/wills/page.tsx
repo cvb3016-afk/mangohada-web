@@ -69,9 +69,9 @@ export default function WillsPage() {
   const year = filtered[0]?.date.slice(0, 4) ?? new Date().getFullYear().toString();
 
   return (
-    <main className="flex flex-1 flex-col gap-4 px-5 pt-6 relative">
+    <main className="flex flex-1 flex-col gap-4 px-5 pt-6 relative lg:max-w-4xl lg:mx-auto lg:w-full lg:px-10 lg:py-10">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold">내 유언</h1>
+        <h1 className="text-lg font-bold lg:text-2xl">내 유언</h1>
         <span className="text-sm text-zinc-400">유언 수신인 관리</span>
       </div>
 
@@ -159,7 +159,7 @@ export default function WillsPage() {
       <Link
         href="/wills/new"
         aria-label="유언 작성"
-        className="fixed bottom-24 left-1/2 translate-x-[139px] w-14 h-14 rounded-full bg-brand text-white text-2xl flex items-center justify-center shadow-lg"
+        className="fixed bottom-24 left-1/2 translate-x-[139px] lg:absolute lg:left-auto lg:translate-x-0 lg:bottom-8 lg:right-8 w-14 h-14 rounded-full bg-brand text-white text-2xl flex items-center justify-center shadow-lg"
       >
         ✏️
       </Link>

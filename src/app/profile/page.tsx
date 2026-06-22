@@ -28,9 +28,9 @@ export default async function ProfilePage() {
     .single();
 
   return (
-    <main className="flex flex-1 flex-col gap-5 px-5 pt-6">
+    <main className="flex flex-1 flex-col gap-5 px-5 pt-6 lg:max-w-2xl lg:mx-auto lg:w-full lg:px-10 lg:py-10">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold">내정보</h1>
+        <h1 className="text-lg font-bold lg:text-2xl">내정보</h1>
         <NotificationBell />
       </div>
 

@@ -11,9 +11,9 @@ const categories = [
 
 export default function ExpertsPage() {
   return (
-    <main className="flex flex-1 flex-col gap-5 px-5 pt-6">
+    <main className="flex flex-1 flex-col gap-5 px-5 pt-6 lg:max-w-6xl lg:mx-auto lg:w-full lg:px-10 lg:py-10">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-bold">전문가</h1>
+        <h1 className="text-lg font-bold lg:text-2xl">전문가</h1>
         <NotificationBell />
       </div>
 
@@ -22,11 +22,11 @@ export default function ExpertsPage() {
         <span className="text-sm text-brand-dark">›</span>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-5">
         {categories.map((c) => (
-          <div key={c.label} className="bg-surface rounded-2xl shadow-sm p-4 flex flex-col gap-2">
+          <div key={c.label} className="bg-surface rounded-2xl shadow-sm p-4 lg:p-6 flex flex-col gap-2">
             <span className="text-2xl">{c.icon}</span>
-            <p className="text-sm font-semibold">{c.label}</p>
+            <p className="text-sm font-semibold lg:text-base">{c.label}</p>
             <p className="text-xs text-zinc-500 line-clamp-2">{c.desc}</p>
           </div>
         ))}

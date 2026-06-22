@@ -28,15 +28,15 @@ export default async function HomePage() {
   const nickname = profile?.name ?? "회원";
 
   return (
-    <main className="flex flex-1 flex-col gap-5 px-5 pt-6">
-      <div className="flex items-center justify-between">
+    <main className="flex flex-1 flex-col gap-5 px-5 pt-6 lg:max-w-6xl lg:mx-auto lg:w-full lg:px-10 lg:py-10 lg:grid lg:grid-cols-3 lg:gap-6 lg:items-start lg:content-start lg:self-start">
+      <div className="flex items-center justify-between lg:hidden">
         <span className="text-xl font-extrabold tracking-tight">mangohada</span>
         <NotificationBell />
       </div>
 
-      <div className="bg-surface rounded-2xl shadow-sm p-5 flex items-center justify-between">
+      <div className="bg-surface rounded-2xl shadow-sm p-5 flex items-center justify-between lg:col-span-3">
         <div>
-          <p className="font-semibold">
+          <p className="font-semibold lg:text-lg">
             안녕하세요, {nickname}님
           </p>
           <p className="text-sm text-zinc-500 mt-1">오늘도 소중한 하루 되세요</p>
@@ -46,29 +46,29 @@ export default async function HomePage() {
 
       <Link
         href="/happiness"
-        className="rounded-2xl p-5 text-white flex flex-col gap-1"
+        className="rounded-2xl p-5 text-white flex flex-col gap-1 lg:col-span-2 lg:p-8 lg:justify-center"
         style={{ background: "linear-gradient(135deg, #F5A623, #FFC966)" }}
       >
-        <span className="font-semibold">행복저금 🎁</span>
+        <span className="font-semibold lg:text-lg">행복저금 🎁</span>
         <span className="text-sm opacity-90">이번주 행복했던 순간을 기록해 보세요</span>
       </Link>
 
       <Link
         href="/happiness"
-        className="bg-surface rounded-2xl shadow-sm p-4 flex items-center justify-between"
+        className="bg-surface rounded-2xl shadow-sm p-4 flex items-center justify-between lg:flex-col lg:items-start lg:justify-center lg:gap-2"
       >
         <span className="text-sm font-medium">행복저금 0개</span>
-        <span className="text-zinc-400">›</span>
+        <span className="text-zinc-400 lg:text-brand lg:text-sm lg:font-medium">›</span>
       </Link>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-3 lg:col-span-2">
         <h2 className="text-sm font-semibold">망고의 전문가 서비스를 만나 보세요.</h2>
-        <div className="flex gap-3 overflow-x-auto pb-1 -mx-5 px-5">
+        <div className="flex gap-3 overflow-x-auto pb-1 -mx-5 px-5 lg:mx-0 lg:px-0 lg:overflow-visible lg:flex-wrap">
           {expertCategories.map((c) => (
             <Link
               key={c.label}
               href="/experts"
-              className="flex flex-col items-center gap-2 bg-surface rounded-2xl shadow-sm px-4 py-4 shrink-0 w-20"
+              className="flex flex-col items-center gap-2 bg-surface rounded-2xl shadow-sm px-4 py-4 shrink-0 w-20 lg:w-28 lg:py-6"
             >
               <span className="text-2xl">{c.icon}</span>
               <span className="text-xs font-medium text-center">{c.label}</span>
@@ -81,7 +81,7 @@ export default async function HomePage() {
         <h2 className="text-sm font-semibold">나의 마지막 초대장</h2>
         <Link
           href="/invitation"
-          className="bg-surface rounded-2xl shadow-sm p-4 flex items-center justify-between"
+          className="bg-surface rounded-2xl shadow-sm p-4 flex items-center justify-between lg:flex-col lg:items-start lg:gap-3 lg:p-6 lg:h-full"
         >
           <span className="text-sm font-medium">초대인원 0명</span>
           <span className="text-sm text-brand font-medium">관리하기 ›</span>
